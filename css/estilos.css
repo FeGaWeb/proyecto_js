@@ -56,6 +56,17 @@ main {
     main .contenedor_cards .cards_general {
       margin: 20px 20px;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); }
+      main .contenedor_cards .cards_general .precio_card {
+        background-color: #9c0000;
+        color: #fff;
+        position: absolute;
+        z-index: 998;
+        width: 55%;
+        align-self: flex-end; }
+        main .contenedor_cards .cards_general .precio_card h4 {
+          font-weight: 600;
+          text-align: center;
+          padding: 10px 10px; }
       main .contenedor_cards .cards_general a {
         border: none;
         background-color: #fff;
@@ -65,7 +76,7 @@ main {
           width: 24px;
           height: 24px; }
         main .contenedor_cards .cards_general a:hover {
-          background-color: dimgray;
+          background-color: silver;
           color: #fff;
           border: 2px solid #fff;
           transition: all 0.2s ease; }
