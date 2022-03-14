@@ -1,4 +1,69 @@
-const producto1 = {
+
+const productosGenerales = [
+
+   [producto1 = {
+        id: "1",
+        nombre: "cuadro1",
+        precio: 600000
+    }],
+
+    [producto2 = {
+        id: "2",
+        nombre: "cuadro2",
+        precio: 600000
+    }],
+    
+    [producto3 = {
+        id: "3",
+        nombre: "cuadro3",
+        precio: 210000
+    }],
+    
+    [producto4 = {
+        id: "4",
+        nombre: "cuadro4",
+        precio: 300000
+    }],
+    
+    [producto5 = {
+        id: "5",
+        nombre: "cuadro5",
+        precio: 600000
+    }],
+    
+    [producto6 = {
+        id: "6",
+        nombre: "cuadro6",
+        precio: 600000
+    }],
+    
+    [producto7 = {
+        id: "7",
+        nombre: "cuadro7",
+        precio: 10000
+    }],
+    
+    [producto8 = {
+        id: "8",
+        nombre: "cuadro8",
+        precio: 300000
+    }],
+    
+    [producto9 = {
+        id: "9",
+        nombre: "cuadro9",
+        precio: 210000
+    }],
+    
+    [producto10 = {
+        id: "10",
+        nombre: "cuadro10",
+        precio: 300000
+    }],
+    
+]
+
+/* const producto1 = {
     id: "1",
     nombre: "cuadro1",
     precio: 600000
@@ -56,7 +121,7 @@ const producto10 = {
     id: "10",
     nombre: "cuadro10",
     precio: 300000
-}
+} */
 
 let comprar;
 let total=0;
