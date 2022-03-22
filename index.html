@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Art2Art</title>
-  <script src="js/main.js"></script>
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="shortcut icon" href="img/logo_redes/arte_icono.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -49,8 +48,8 @@
 
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="¿alguna pintura en especial?" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Search</button>
+            <input id="input-productos" class="form-control me-2" type="text" placeholder="¿alguna pintura en especial?" aria-label="Search">
+            <button id="boton-search" class="btn btn-outline-dark" type="submit">Search</button>
           </form>
         </div>
       </div>
@@ -60,59 +59,21 @@
 
   <main>
 
-    <section class="slider">
+    <section class="titulo">
 
-      <div class="titulo_slider">
+      <div class="titulo_img">
         <img src="img/logo_redes/art2art1.png" alt="">
       </div>
-
-      <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/img_slider/slide_1.jpg" class="d-block w-100" style="height: 720px;" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/img_slider/slide_2.jpg" class="d-block w-100" style="height: 720px;" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/img_slider/slide_3.jpg" class="d-block w-100" style="height: 720px;" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div> -->
 
     </section>
 
     <section class="contenedor_cards">
 
-      <div class="cards_general">
+    
+    <div id="cards_general">
 
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>600.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
+        <!-- <div class="card" id="cards" style="width: 22rem;">
+          <div id="precio_card">
             <h4>600.000COP</h4>
           </div>
           <img src="img/img_cards/card_2.jpg" class="card-img-top" alt="...">
@@ -122,11 +83,11 @@
               content.</p>
             <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
           </div>
-        </div>
+        </div> -->
 
       </div>
 
-      <div class="cards_general">
+       <!--  <div class="cards_general">
 
         <div class="card" style="width: 22rem;">
           <div class="precio_card">
@@ -294,7 +255,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
     </section>
   </main>
@@ -309,6 +270,7 @@
     </div>
 
   </footer>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

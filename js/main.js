@@ -1,140 +1,149 @@
 
+const carrito = [];
 const productosGenerales = [
 
-   [producto1 = {
-        id: "1",
+   {
+        id: "Producto1",
         nombre: "cuadro1",
-        precio: 600000
-    }],
+        precio: 600000,
+        img: '../img/img_cards/card_1.jpg',
+    },
 
-    [producto2 = {
-        id: "2",
+    {
+        id: "Producto2",
         nombre: "cuadro2",
-        precio: 600000
-    }],
+        precio: 600000,
+        img: '../img/img_cards/card_2.jpg',
+    },
     
-    [producto3 = {
-        id: "3",
+    {
+        id: "Producto3",
         nombre: "cuadro3",
-        precio: 210000
-    }],
+        precio: 210000,
+        img: '../img/img_cards/card_3.jpg',
+    },
     
-    [producto4 = {
-        id: "4",
+    {
+        id: "Producto4",
         nombre: "cuadro4",
-        precio: 300000
-    }],
+        precio: 300000,
+        img: '../img/img_cards/card_4.jpg',
+    },
     
-    [producto5 = {
-        id: "5",
+    {
+        id: "Producto5",
         nombre: "cuadro5",
-        precio: 600000
-    }],
+        precio: 600000,
+        img: '../img/img_cards/card_5.jpg',
+    },
     
-    [producto6 = {
-        id: "6",
+    {
+        id: "Producto6",
         nombre: "cuadro6",
-        precio: 600000
-    }],
+        precio: 600000,
+        img: '../img/img_cards/card_6.jpg',
+    },
     
-    [producto7 = {
-        id: "7",
+    {
+        id: "Producto7",
         nombre: "cuadro7",
-        precio: 10000
-    }],
+        precio: 10000,
+        img: '../img/img_cards/card_7.jpg',
+    },
     
-    [producto8 = {
-        id: "8",
+    {
+        id: "Producto8",
         nombre: "cuadro8",
-        precio: 300000
-    }],
+        precio: 300000,
+        img: '../img/img_cards/card_8.jpg',
+    },
     
-    [producto9 = {
-        id: "9",
+    {
+        id: "Producto9",
         nombre: "cuadro9",
-        precio: 210000
-    }],
+        precio: 210000,
+        img: '../img/img_cards/card_9.jpg',
+    },
     
-    [producto10 = {
-        id: "10",
+    {
+        id: "Producto10",
         nombre: "cuadro10",
-        precio: 300000
-    }],
+        precio: 300000,
+        img: '../img/img_cards/card_10.jpg',
+    },
+
+    {
+        id: "Producto11",
+        nombre: "cuadro11",
+        precio: 300000,
+        img: '../img/img_cards/card_10.jpg',
+    },
+
+    {
+        id: "Producto12",
+        nombre: "cuadro12",
+        precio: 300000,
+        img: '../img/img_cards/card_10.jpg',
+    },
     
 ]
-
-/* const producto1 = {
-    id: "1",
-    nombre: "cuadro1",
-    precio: 600000
-}
-
-const producto2 = {
-    id: "2",
-    nombre: "cuadro2",
-    precio: 600000
-}
-
-const producto3 = {
-    id: "3",
-    nombre: "cuadro3",
-    precio: 210000
-}
-
-const producto4 = {
-    id: "4",
-    nombre: "cuadro4",
-    precio: 300000
-}
-
-const producto5 = {
-    id: "5",
-    nombre: "cuadro5",
-    precio: 600000
-}
-
-const producto6 = {
-    id: "6",
-    nombre: "cuadro6",
-    precio: 600000
-}
-
-const producto7 = {
-    id: "7",
-    nombre: "cuadro7",
-    precio: 10000
-}
-
-const producto8 = {
-    id: "8",
-    nombre: "cuadro8",
-    precio: 300000
-}
-
-const producto9 = {
-    id: "9",
-    nombre: "cuadro9",
-    precio: 210000
-}
-
-const producto10 = {
-    id: "10",
-    nombre: "cuadro10",
-    precio: 300000
-} */
 
 let comprar;
 let total=0;
 
 function descuentoPrimerCompra(descuento){
-    if(descuento>10000){
+    if (descuento > 10000){
         descuento = descuento*0.9;
     }
 
     return descuento;
 }
 
-do {
+
+const agregarCarrito = (producto) =>{
+    carrito.push(producto)
+}
+
+let GeneradorCards = ``;
+
+productosGenerales.forEach(elementoDelArray =>{
+    GeneradorCards += ` <div class="cards_general">
+    
+    <div class="card" style="width: 20rem;">
+      <img src="${elementoDelArray.img}" class="card-img-top" alt="...">
+      <div class="precio_card">
+        <h4> $ ${elementoDelArray.precio}</h4>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">${elementoDelArray.nombre}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+          <a href="#" class="btn btn-dark addToCart" onclick="agregarCarrito()"> Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
+          </div>
+    </div>
+  </div>`;
+})
+
+document.getElementById("cards_general").innerHTML = GeneradorCards
+
+
+function botonBuscador () {
+    const search = document.getElementById("input-productos").value;
+    console.log(search)
+}
+
+
+function buscarProducto(){
+    const NombreProductosBuscados = document.getElementById("input-productos").value;
+    console.log(NombreProductosBuscados);
+}
+
+
+
+
+
+
+/* do {
     const productoSeleccionado = prompt(`
     selecciona un cuadro que desees comprar 
     1. ${producto1.nombre} $ ${producto1.precio} 
@@ -200,4 +209,4 @@ do {
 
 } while(comprar !== "no")
 let precioConDescuento = descuentoPrimerCompra(total)
-alert("el total de la compra es $" + total +"precio con descuento $" + precioConDescuento)
+alert("el total de la compra es $" + total +"precio con descuento $" + precioConDescuento) */
