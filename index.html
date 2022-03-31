@@ -26,8 +26,9 @@
 
     <nav class="navbar navbar-expand-md navbar-light ">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logo_redes/arte_icono.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#inicio"><img src="img/logo_redes/arte_icono.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
@@ -48,16 +49,16 @@
 
           </ul>
           <form class="d-flex">
-            <input id="input-productos" class="form-control me-2" type="text" placeholder="¿alguna pintura en especial?" aria-label="Search">
-            <button id="boton-search" class="btn btn-outline-dark" type="submit">Search</button>
+            <input id="formularioBusqueda" class="form-control me-2" type="text" aria-label="Search">
+            <button id="boton" class="btn btn-outline-dark btn-info">Search</button>
           </form>
         </div>
       </div>
     </nav>
-    
+
   </header>
 
-  <main>
+  <main id="inicio">
 
     <section class="titulo">
 
@@ -67,10 +68,10 @@
 
     </section>
 
-    <section class="contenedor_cards">
+    <section class="contenedor_cards" id="galeria">
 
-    
-    <div id="cards_general">
+
+      <div id="cards_general">
 
         <!-- <div class="card" id="cards" style="width: 22rem;">
           <div id="precio_card">
@@ -87,175 +88,14 @@
 
       </div>
 
-       <!--  <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>210.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
+      <section id="contenedor-principal">
+        <div id="contenedor-interno">
+          <img id="img-activa" src="img/img_cards/card_1.jpg" alt="">
+          <button id="btn-cierra" type="button">X</button>
+          <!-- <button id="btn-retrocede" type="button">&lt;</button>
+          <button id="btn-adelanta" type="button">&gt;</button> -->
         </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>300.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>140.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_5.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>100.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_6.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>550.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_7.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>400.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_8.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>220.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_9.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>300.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_10.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Agregar al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>600.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cards_general">
-
-        <div class="card" style="width: 22rem;">
-          <div class="precio_card">
-            <h4>600.000COP</h4>
-          </div>
-          <img src="img/img_cards/card_5.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-dark addToCart">Añadir al carrito <img src="img/logo_redes/carrito.png" alt=""></a>
-          </div>
-        </div>
-
-      </div> -->
+      </section>
 
     </section>
   </main>

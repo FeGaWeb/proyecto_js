@@ -71,7 +71,11 @@ main {
       main .contenedor_cards #cards_general img {
         height: 200px;
         width: auto;
-        object-fit: cover; }
+        object-fit: cover;
+        cursor: pointer; }
+        main .contenedor_cards #cards_general img:hover {
+          opacity: 80%;
+          transition: all 0.3s ease; }
       main .contenedor_cards #cards_general a img {
         width: 22px;
         height: 22px; }
@@ -87,6 +91,65 @@ main {
           background-color: #c0c0c0;
           color: black;
           border: 2px solid #c0c0c0; }
+    main .contenedor_cards #contenedor-principal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.616); }
+      main .contenedor_cards #contenedor-principal #contenedor-interno {
+        width: 800px;
+        height: 600px;
+        border: 2px solid #f3f3f3;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        position: relative; }
+        main .contenedor_cards #contenedor-principal #contenedor-interno #btn-cierra {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          color: #f3f3f3;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 2rem;
+          padding: 10px 30px;
+          background-color: #000; }
+          main .contenedor_cards #contenedor-principal #contenedor-interno #btn-cierra:hover {
+            opacity: 70%;
+            transition: all 0.3s ease; }
+        main .contenedor_cards #contenedor-principal #contenedor-interno #btn-retrocede {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          color: #f3f3f3;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          font-size: 3rem;
+          padding: 0px 30px; }
+        main .contenedor_cards #contenedor-principal #contenedor-interno #btn-adelanta {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          color: #f3f3f3;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          font-size: 3rem;
+          padding: 0px 30px; }
+        main .contenedor_cards #contenedor-principal #contenedor-interno #img-activa {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+          main .contenedor_cards #contenedor-principal #contenedor-interno #img-activa img {
+            object-fit: cover; }
 
 footer {
   width: 5%;
