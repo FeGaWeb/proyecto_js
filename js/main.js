@@ -1,4 +1,4 @@
-const carrito = [];
+
 const productosGenerales = [
 
     {
@@ -102,19 +102,6 @@ const productosGenerales = [
 let comprar;
 let total = 0;
 
-function descuentoPrimerCompra(descuento) {
-    if (descuento > 10000) {
-        descuento = descuento * 0.9;
-    }
-
-    return descuento;
-}
-
-
-const agregarCarrito = (producto) => {
-    carrito.push(producto)
-}
-
 let GeneradorCards = ``;
 
 function renderProductos (arrayProductos){
@@ -134,26 +121,33 @@ function renderProductos (arrayProductos){
             <h5 class="card-title">${elementoDelArray.nombre}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-              <a href="#" class="btn btn-dark addToCart" onclick="agregarCarrito()"> Añadir al carrito</a>
+              <button id="agregar" class="btn btn-dark"> Añadir al carrito</button>
               </div>
         </div>
       </div>`;
+
+      const botonAdd = document.getElementById('agregar')
+
+      botonAdd.addEventListener('click', ()=>{
+          agregarProducto(elementoDelArray.id)
+      })
+
     });
 
 }
 
+// container carrito
 
+const cerrarCarrito = document.querySelector('#cerrarCarrito')
+const modalContainer = document.querySelector('#modalCar')
 
-/* function botonBuscador () {
-    const search = document.getElementById("input-productos").value;
-    console.log(search)
+cerrarCarrito.addEventListener('click', () => {
+    modalContainer.style.display = 'none'
+})
+
+function mostrar(){
+    document.getElementById('modalCar').style.display = 'block'
 }
-
-
-function buscarProducto(){
-    const NombreProductosBuscados = document.getElementById("input-productos").value;
-    console.log(NombreProductosBuscados);
-} */
 
 // eventos 
 
@@ -203,7 +197,6 @@ const retrocedeImagen = () => {
 
 // buscador
 
-
 const boton = document.querySelector('#boton')
 const resultado = document.querySelector('#cards_general')
 
@@ -237,6 +230,42 @@ boton.addEventListener('click', (e) =>{
 })
 
 renderProductos(productosGenerales)
+
+// agregar al carrito
+
+let carrito = []
+
+const contenedorCarrito = document.getElementById('modalCar')
+
+const agregarProducto = (prodId) =>{
+    const item = productosGenerales.find((prod) => prod.id === prodId)
+    carrito.push(item)
+    actualizarCarrito()
+    console.log(carrito)
+}
+
+const actualizarCarrito = () =>{
+    carrito.forEach((prod) =>{
+        const div = document.createElement('div')
+        div.className ('container-modal')
+        div.innerHTML = `
+        <img src="${prod.img}" alt="">
+        <h3>Titulo: ${prod.nombre}</h3>
+        <h3>precio: ${prod.precio}</h3>
+        <h3>cantidad: ${prod.cantidad}</h3>
+
+        `
+
+        contenedorCarrito.appendChild(div)
+    })
+}
+
+
+
+
+
+
+
 
 /* do {
     const productoSeleccionado = prompt(`
