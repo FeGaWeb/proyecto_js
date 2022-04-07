@@ -121,16 +121,10 @@ function renderProductos (arrayProductos){
             <h5 class="card-title">${elementoDelArray.nombre}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-              <button id="agregar" class="btn btn-dark"> Añadir al carrito</button>
+              <button id="addProduct" onclick="agregarProducto('${elementoDelArray.id}')" class="btn btn-dark"> Añadir al carrito</button>
               </div>
         </div>
       </div>`;
-
-      const botonAdd = document.getElementById('agregar')
-
-      botonAdd.addEventListener('click', ()=>{
-          agregarProducto(elementoDelArray.id)
-      })
 
     });
 
@@ -141,12 +135,14 @@ function renderProductos (arrayProductos){
 const cerrarCarrito = document.querySelector('#cerrarCarrito')
 const modalContainer = document.querySelector('#modalCar')
 
-cerrarCarrito.addEventListener('click', () => {
-    modalContainer.style.display = 'none'
-})
-
 function mostrar(){
     document.getElementById('modalCar').style.display = 'block'
+    actualizarCarrito()
+}
+
+function ocultar(){
+    document.getElementById('modalCar').style.display = 'none'
+    actualizarCarrito()
 }
 
 // eventos 
@@ -182,9 +178,6 @@ const adelantaImagen = () => {
     indiceImagen++;
 }
 
-//btnAdelanta.addEventListener('click', adelantaImagen);
-
-
 const retrocedeImagen = () => {
     if (indiceImagen === 0) {
         indiceImagen = imagenes.length;
@@ -192,8 +185,6 @@ const retrocedeImagen = () => {
     imagenActiva.src = imagenes[indiceImagen - 1].src
     indiceImagen--
 }
-
-//btnRetrocede.addEventListener('click', retrocedeImagen)
 
 // buscador
 
@@ -235,8 +226,6 @@ renderProductos(productosGenerales)
 
 let carrito = []
 
-const contenedorCarrito = document.getElementById('modalCar')
-
 const agregarProducto = (prodId) =>{
     const item = productosGenerales.find((prod) => prod.id === prodId)
     carrito.push(item)
@@ -245,19 +234,67 @@ const agregarProducto = (prodId) =>{
 }
 
 const actualizarCarrito = () =>{
+
+    const contenedorCarrito = document.getElementById('modalCar')
+    console.log(contenedorCarrito)
+    console.log(carrito)
+
     carrito.forEach((prod) =>{
-        const div = document.createElement('div')
-        div.className ('container-modal')
-        div.innerHTML = `
+        contenedorCarrito.innerHTML += `
         <img src="${prod.img}" alt="">
         <h3>Titulo: ${prod.nombre}</h3>
         <h3>precio: ${prod.precio}</h3>
         <h3>cantidad: ${prod.cantidad}</h3>
-
         `
-
-        contenedorCarrito.appendChild(div)
     })
+}
+
+
+// librerías
+
+function alertCarProduct(){
+     
+    swal({
+        title: "Se han eliminado los productos de tu carrito",
+        icon: "success",
+        button: "Cerrar",
+      });
+
+}
+
+//storage y json
+
+function remove(id){
+    let car=JSON.parse(localStorage.getItem("carrito"));
+    let carritoFinal = car.filter(e=>e.id!==id);
+    localStorage.setItem("carrito", JSON.stringify(carritoFinal))
+}
+
+function getStorage(){
+    let storage = JSON.parse(localStorage.getItem("carrito")) || [];
+    return storage;
+}
+
+function setStorage(array){
+    localStorage.setItem("carrito", JSON.stringify(array));
+}
+
+function enCarrito(){
+    let carrito = getStorage()
+    return carrito.some(e=>e.id===id);
+}
+
+function carritoAdd(id){
+    let productoSeleccionado = productosGenerales.find(e=>e.id===id)
+    let carrito= getStorage()
+    let indice = carrito.findIndex(e=>e.id===id);
+    if(indice!==-1){
+        carrito[indice].cantidad++
+        setStorage(carrito)
+    }else{
+        carrito.push({id:productoSeleccionado.id, pedidos:1})
+        setStorage(carrito)
+    }
 }
 
 
@@ -267,150 +304,24 @@ const actualizarCarrito = () =>{
 
 
 
-/* do {
-    const productoSeleccionado = prompt(`
-                selecciona un cuadro que desees comprar
-                1. $ {
-                    producto1.nombre
-                }
-                $ $ {
-                    producto1.precio
-                }
-                2. $ {
-                    producto2.nombre
-                }
-                $ $ {
-                    producto2.precio
-                }
-                3. $ {
-                    producto3.nombre
-                }
-                $ $ {
-                    producto3.precio
-                }
-                4. $ {
-                    producto4.nombre
-                }
-                $ $ {
-                    producto4.precio
-                }
-                5. $ {
-                    producto5.nombre
-                }
-                $ $ {
-                    producto5.precio
-                }
-                6. $ {
-                    producto6.nombre
-                }
-                $ $ {
-                    producto6.precio
-                }
-                7. $ {
-                    producto7.nombre
-                }
-                $ $ {
-                    producto7.precio
-                }
-                8. $ {
-                    producto8.nombre
-                }
-                $ $ {
-                    producto8.precio
-                }
-                9. $ {
-                    producto9.nombre
-                }
-                $ $ {
-                    producto9.precio
-                }
-                10. $ {
-                    producto10.nombre
-                }
-                $ $ {
-                    producto10.precio
-                }
-                `);
 
-    switch (productoSeleccionado) {
 
-        case "1":
-            alert(`
-                has seleccionado $ {
-                    producto1.nombre
-                }, se agregó a tu carrito `)
-            total += producto1.precio;
-            break;
-        case "2":
-            alert(`
-                has seleccionado $ {
-                    producto2.nombre
-                }, se agregó a tu carrito `)
-            total += producto2.precio;
-            break;
-        case "3":
-            alert(`
-                has seleccionado $ {
-                    producto3.nombre
-                }, se agregó a tu carrito `)
-            total += producto3.precio;
-            break;
-        case "4":
-            alert(`
-                has seleccionado $ {
-                    producto4.nombre
-                }, se agregó a tu carrito `)
-            total += producto4.precio;
-            break;
-        case "5":
-            alert(`
-                has seleccionado $ {
-                    producto5.nombre
-                }, se agregó a tu carrito `)
-            total += producto5.precio;
-            break;
-        case "6":
-            alert(`
-                has seleccionado $ {
-                    producto6.nombre
-                }, se agregó a tu carrito `)
-            total += producto6.precio;
-            break;
-        case "7":
-            alert(`
-                has seleccionado $ {
-                    producto7.nombre
-                }, se agregó a tu carrito `)
-            total += producto7.precio;
-            break;
-        case "8":
-            alert(`
-                has seleccionado $ {
-                    producto8.nombre
-                }, se agregó a tu carrito `)
-            total += producto8.precio;
-            break;
-        case "9":
-            alert(`
-                has seleccionado $ {
-                    producto9.nombre
-                }, se agregó a tu carrito `)
-            total += producto9.precio;
-            break;
-        case "10":
-            alert(`
-                has seleccionado $ {
-                    producto10.nombre
-                }, se agregó a tu carrito `)
-            total += producto10.precio;
-            break;
-        default:
-            alert("esta no es una opción válida");
-            break;
-    }
 
-    comprar = prompt("¿deseas seguir con la compra? si/no")
 
-} while(comprar !== "no")
-let precioConDescuento = descuentoPrimerCompra(total)
-alert("el total de la compra es $" + total +"precio con descuento $" + precioConDescuento) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

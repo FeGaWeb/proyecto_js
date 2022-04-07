@@ -87,7 +87,26 @@ header {
                 background-color: #fff;
             }
 
-            
+            #borrarCarrito{
+                position: relative;
+                top: 100%;
+                left: 70%;
+                width: 100px;
+                height: 40px;
+                font-size: 12px;
+                margin: 10px 10px;
+                border: none;
+                background-color: #8d0000;
+                border-radius: 10px;
+                color: #fff;
+                font-weight: 900;
+
+                &:hover{
+                    transition: all 0.3s ease;
+                    transform: scale(110%);
+                    opacity: 50%;
+                }
+            }
 
             #cerrarCarrito{
                 width: 32px;
