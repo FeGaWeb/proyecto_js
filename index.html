@@ -56,13 +56,13 @@
           </ul>
 
           <div id="modalCar" class="container-modal">
-  
+              <div id="contenedorCarrito"></div>
               <!-- <img src="img/img_cards/card_1.jpg" alt="">
               <h3>Titulo: asdad</h3>
               <h3>precio: 213123</h3>
               <h3>cantidad: 1</h3> -->
               <button id="cerrarCarrito" onclick="ocultar()">X</button>
-              <button id="borrarCarrito" onclick="alertCarProduct()">Eliminar todo</button>
+              <button id="borrarCarrito" onclick="vaciarCarrito()">Eliminar todo</button>
 
           </div>
 
@@ -128,6 +128,7 @@
     </div>
 
   </footer>
+  <script src="js/db.js"></script>
   <script src="js/main.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
