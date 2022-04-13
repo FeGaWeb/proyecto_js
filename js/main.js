@@ -3,11 +3,11 @@ let comprar;
 let total = 0;
 const cerrarCarrito = document.querySelector('#cerrarCarrito')
 const modalContainer = document.querySelector('#modalCar')
-//
+//imagenes
 const btnCierra = document.querySelector('#btn-cierra')
 const btnAdelanta = document.querySelector('#btn-adelanta')
 const btnRetrocede = document.querySelector('btn-retrocede')
-//
+//modal
 const imagenes = document.querySelectorAll('#galeria img')
 const ligbox = document.querySelector('#contenedor-principal')
 const imagenActiva = document.querySelector('#img-activa')
@@ -15,7 +15,17 @@ let indiceImagen = 0
 //
 const boton = document.querySelector('#boton')
 const resultado = document.querySelector('#cards_general')
+//FETCH
 
+/* let request = new Request("./products.json", productosGenerales);
+
+fetch(request)
+    .then(function(resp){
+        return resp.json();
+    })
+    .then(function(data){
+        console.log(data.products)
+    }) */
 // let GeneradorCards = ``;
 
 
