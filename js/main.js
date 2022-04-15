@@ -15,17 +15,22 @@ let indiceImagen = 0
 //
 const boton = document.querySelector('#boton')
 const resultado = document.querySelector('#cards_general')
-//FETCH
+// suma productos
 
-/* let request = new Request("./products.json", productosGenerales);
+//FETCH
+let request = "./productos.json"
+let productosGenerales;
 
 fetch(request)
     .then(function(resp){
         return resp.json();
+        
     })
     .then(function(data){
-        console.log(data.products)
-    }) */
+        productosGenerales = data.slice(0)
+        renderProductos(productosGenerales)
+    })
+
 // let GeneradorCards = ``;
 
 
@@ -132,7 +137,7 @@ const actualizarCarrito = () => {
                 <img src="${prod.img}" alt="">
                 <h3>Titulo: ${prod.nombre}</h3>
                 <h3>precio: ${prod.precio}</h3>
-                <h3>cantidad: ${prod.cantidad}</h3>
+                <h3>medidas: ${prod.medidas}</h3>
                 <button class="btn btn-danger" onclick="remove('${prod.id}')">X</button>
         `
     })
@@ -193,7 +198,7 @@ function sumarUno(id){
 }
 
 
-//logia
+//logica
 
 renderProductos(productosGenerales)
 

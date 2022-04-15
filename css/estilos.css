@@ -36,13 +36,13 @@ header {
       width: 32px;
       height: 32px; }
   header nav .container-modal {
-    width: 20vw;
-    height: 40vh;
+    width: 1000px;
+    height: 500px;
     position: fixed;
-    top: 100%;
-    left: 18%;
-    background-color: #868686;
-    z-index: 999;
+    top: 150%;
+    left: 20%;
+    background-color: #d6d6d6;
+    z-index: -999;
     padding: 20px 20px;
     display: flex;
     flex-flow: row nowrap;
@@ -59,7 +59,7 @@ header {
     header nav .container-modal #borrarCarrito {
       position: relative;
       top: 100%;
-      left: 70%;
+      right: 0;
       width: 100px;
       height: 40px;
       font-size: 12px;
