@@ -18,7 +18,7 @@ const resultado = document.querySelector('#cards_general')
 // suma productos
 
 //FETCH
-let request = "./productos.json"
+let request = "./products.json"
 let productosGenerales;
 
 fetch(request)
@@ -200,7 +200,7 @@ function sumarUno(id){
 
 //logica
 
-renderProductos(productosGenerales)
+/* renderProductos(productosGenerales) */
 
 imagenes.forEach((imagen) => {
     imagen.addEventListener('click', abreLigbox)
