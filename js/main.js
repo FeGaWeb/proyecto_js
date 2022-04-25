@@ -123,7 +123,7 @@ const agregarProducto = (prodId) => {
     const carrito= getStorage();
     const item = productosGenerales.find((prod) => prod.id === prodId)
     carrito.push(item)
-    setStorage(carrito)//agregado
+    setStorage(carrito)
     actualizarCarrito()
     console.log(carrito)
 }
@@ -176,19 +176,6 @@ function enCarrito() {
     return carrito.some(e => e.id === id);
 }
 
-// function carritoAdd(id) {
-//     let productoSeleccionado = productosGenerales.find(e => e.id === id)
-//     let carrito = getStorage()
-//     let indice = carrito.findIndex(e => e.id === id);
-//     if (indice !== -1) {
-//         carrito[indice].cantidad++
-//         setStorage(carrito)
-//     } else {
-//         carrito.push(productoSeleccionado)
-//         setStorage(carrito)
-//     }
-// }
-
 function sumarUno(id){
     let carrito=getStorage();
     let indice = carrito.findIndex(e => e.id === id);
@@ -197,10 +184,6 @@ function sumarUno(id){
     actualizarCarrito()
 }
 
-
-//logica
-
-/* renderProductos(productosGenerales) */
 
 imagenes.forEach((imagen) => {
     imagen.addEventListener('click', abreLigbox)
