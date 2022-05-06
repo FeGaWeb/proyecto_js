@@ -1,23 +1,22 @@
-// Variables
 let comprar;
 let total = 0;
 const cerrarCarrito = document.querySelector('#cerrarCarrito')
 const modalContainer = document.querySelector('#modalCar')
-//imagenes
+
 const btnCierra = document.querySelector('#btn-cierra')
 const btnAdelanta = document.querySelector('#btn-adelanta')
 const btnRetrocede = document.querySelector('btn-retrocede')
-//modal
+
 const imagenes = document.querySelectorAll('#galeria img')
 const ligbox = document.querySelector('#contenedor-principal')
 const imagenActiva = document.querySelector('#img-activa')
 let indiceImagen = 0
-//
+
 const boton = document.querySelector('#boton')
 const resultado = document.querySelector('#cards_general')
-// suma productos
 
-//FETCH
+
+
 let request = "./products.json"
 let productosGenerales;
 
@@ -31,10 +30,6 @@ fetch(request)
         renderProductos(productosGenerales)
     })
 
-// let GeneradorCards = ``;
-
-
-//funciones
 const filtrar = () => {
     
     const formulario = document.querySelector('#formularioBusqueda')
@@ -58,7 +53,6 @@ const filtrar = () => {
     }
 }
 
-// eventos 
 
 const abreLigbox = (event) => {
     imagenActiva.src = event.target.src;
@@ -82,8 +76,6 @@ const retrocedeImagen = () => {
     indiceImagen--
 }
 
-//Storage
-
 function setStorage(parametro){
     localStorage.setItem("carrito", JSON.stringify(parametro))
 }
@@ -91,9 +83,7 @@ function setStorage(parametro){
 function getStorage(){
     return JSON.parse(localStorage.getItem("carrito")) || [];
 }
-//fin storage
 
-//mostrar
 function renderProductos(arrayProductos) {
     
     const cardsContenedora = document.getElementById("cards_general")
@@ -116,8 +106,6 @@ function renderProductos(arrayProductos) {
             </div>`;
     });
 }
-
-// agregar al carrito
 
 const agregarProducto = (prodId) => {
     const carrito= getStorage();
@@ -183,7 +171,6 @@ function sumarUno(id){
     setStorage(carrito)
     actualizarCarrito()
 }
-
 
 imagenes.forEach((imagen) => {
     imagen.addEventListener('click', abreLigbox)
